@@ -1,0 +1,139 @@
+@font-face {
+  font-family: saiyan;
+  src: url(fonts/saiyan_sans/Saiyan-Sans.ttf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.display {
+  width: 100%;
+  height: 500px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.menu {
+  display: flex;
+  width: 100%;
+  height: 500px;
+  justify-content: center;
+}
+
+.iniciar {
+  display: flex;
+  justify-content: center;
+}
+
+.titulo {
+  position: absolute;
+  top: 0;
+}
+
+.start {
+  position: absolute;
+  bottom: 40%;
+  font-size: 3rem;
+  cursor: pointer;
+  font-family: saiyan;
+}
+
+.game-over {
+  display: none;
+  justify-content: center;
+}
+
+.ko {
+  width: 350px;
+  position: absolute;
+  top: 0;
+}
+
+.restart {
+  position: absolute;
+  bottom: 40%;
+  font-size: 2.5rem;
+  cursor: pointer;
+  font-family: saiyan;
+}
+
+.score {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 2.5rem;
+  cursor: pointer;
+  font-family: saiyan;
+}
+
+.bg-conteiner {
+  z-index: 1;
+  background: url("./imagens/sky-pixel.png") repeat-x;
+  background-position: bottom;
+  height: 700px;
+  width: 7680px;
+  animation: slide 7s infinite linear;
+}
+
+@keyframes slide {
+  0% {
+    transform: translate(0);
+  }
+  100% {
+    transform: translate(-3840px); /* The image width */
+  }
+}
+
+.kamehameha {
+  display: none;
+}
+
+.iniciar-ataque {
+  display: initial;
+  width: 100px;
+  position: absolute;
+  transform: scaleX(-1);
+  bottom: 0;
+  animation: kame 1.5s infinite linear;
+}
+
+@keyframes kame {
+  from {
+    right: -80px;
+  }
+
+  to {
+    right: 100%;
+  }
+}
+
+.goku {
+  position: absolute;
+  bottom: 0;
+}
+
+.jump {
+  animation: jump 500ms ease-out;
+}
+
+@keyframes jump {
+  0% {
+    bottom: 0;
+  }
+  40% {
+    bottom: 180px;
+  }
+  50% {
+    bottom: 180px;
+  }
+  60% {
+    bottom: 180px;
+  }
+  100% {
+    bottom: 0;
+  }
+}
