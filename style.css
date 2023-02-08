@@ -98,7 +98,7 @@
   position: absolute;
   transform: scaleX(-1);
   bottom: 0;
-  animation: kame 1.5s infinite linear;
+  animation: kame 0s infinite linear;
 }
 
 @keyframes kame {
