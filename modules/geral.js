@@ -10,37 +10,35 @@ export default function geral() {
   function play() {
     // ------------------------GAMEPLAY-----------------------------
     function jump() {
+      //ativa o pulo do goku
       goku.classList.add("jump");
       setTimeout(() => {
         goku.classList.remove("jump");
       }, 500);
     }
     const loop = setInterval(() => {
+      //verifica a posição do goku no display
       const kamePosition = kame.offsetLeft;
       const gokuPosition = +window
         .getComputedStyle(goku)
         .bottom.replace("px", "");
       if (kamePosition <= 180 && kamePosition > 0 && gokuPosition < 110) {
+        //encerra o jogo caso o goku seja atingido
         kame.style.animation = "none";
         kame.style.left = `${kamePosition}px`;
         gameOver.style.display = "flex";
-        clearInterval(tempo);
+        kame.classList.add("parar-tempo");
       }
     }, 10);
     iniciar.style.display = "none";
-    kame.classList.add("iniciar-ataque");
+    kame.classList.add("iniciar-ataque"); //inicia o ataque do kamehameha
     document.addEventListener("keydown", jump);
-
-    // ---------------------- SCORE ----------------------------------
-    let i = 0;
-    const tempo = setInterval(() => {
-      score.innerText = i++;
-    }, 1000);
   }
 
   start.addEventListener("click", play);
 
   function reload() {
+    //reinicia a pagina
     document.location.reload(false);
   }
 
