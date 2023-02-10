@@ -70,6 +70,27 @@
   font-family: saiyan;
 }
 
+.score-img {
+  position: absolute;
+  width: 10rem;
+  height: 8rem;
+  z-index: 2;
+  top: 0;
+  right: 0;
+  margin: 0;
+}
+
+.score {
+  text-shadow: black -3px -1px;
+  font-weight: bold;
+  font-size: 2rem;
+  color: goldenrod;
+  z-index: 2;
+  top: 58px;
+  right: 85px;
+  margin: 0;
+}
+
 .bg-conteiner {
   z-index: 1;
   background: url("./imagens/sky-pixel.png") repeat-x;
