@@ -1,7 +1,7 @@
-import geral from "./modules/geral.js";
+import main from "./modules/main.js";
 import stages from "./modules/stages.js";
 import score from "./modules/score.js";
 
-geral();
+main();
 stages();
 score();

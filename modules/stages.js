@@ -1,14 +1,24 @@
 export default function stages() {
   class Stage {
-    constructor(speed, time) {
+    constructor(speed, time, moment, classe) {
       this.speed = speed;
       this.time = time;
+      this.moment = moment;
+      this.classe = classe;
     }
     get element() {
-      const speedElement = document.querySelector(".kamehameha");
+      const ElementKame = document.querySelector(".kamehameha");
+      const Elementboo = document.querySelector(".boo");
+      const speedElement = [ElementKame, Elementboo];
+
       setTimeout(() => {
-        speedElement.style.animationDuration = this.speed;
+        ElementKame.style.animationDuration = this.speed;
       }, this.time);
+      setTimeout(() => {
+        Elementboo.style.animationDuration = this.speed;
+        Elementboo.classList.add(this.classe);
+      }, this.moment);
+
       return speedElement;
     }
   }
@@ -19,6 +29,6 @@ export default function stages() {
   const stageTwo = new Stage("1s", 6000);
   stageTwo.element;
 
-  const stageThree = new Stage("0.7s", 30000);
+  const stageThree = new Stage("0.7s", 30000, "iniciar-ataque");
   stageThree.element;
 }

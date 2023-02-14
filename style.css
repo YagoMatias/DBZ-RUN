@@ -111,13 +111,20 @@
 
 .kamehameha {
   display: none;
+  width: 5rem;
+  transform: scaleX(-1);
+}
+
+.boo {
+  display: none;
+  position: absolute;
+  width: 8rem;
+  top: 70px;
 }
 
 .iniciar-ataque {
   display: initial;
-  width: 100px;
   position: absolute;
-  transform: scaleX(-1);
   bottom: 0;
   animation: kame 0s infinite linear;
 }
@@ -135,6 +142,7 @@
 .goku {
   position: absolute;
   bottom: 0;
+  width: 11rem;
 }
 
 .jump {
