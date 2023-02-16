@@ -25,7 +25,7 @@ export default function geral() {
         .getComputedStyle(goku)
         .bottom.replace("px", "");
       if (kamePosition <= 180 && kamePosition > 0 && gokuPosition < 110) {
-        //encerra o jogo caso o goku seja atingido
+        //encerra o jogo caso o goku seja atingido pelo kamehameha
         kame.style.animation = "none";
         kame.style.left = `${kamePosition}px`;
         gameOver.style.display = "flex";
@@ -34,8 +34,8 @@ export default function geral() {
         boo.style.left = `${booPosition}px`;
         boo.classList.add("parar-tempo");
       }
-      if (booPosition <= 120 && gokuTopPosition < 135) {
-        //encerra o jogo caso o goku seja atingido
+      if (booPosition <= 125 && booPosition > 0 && gokuTopPosition < 135) {
+        //encerra o jogo caso o goku seja atingido pelo Majin boo
         boo.style.animation = "none";
         boo.style.left = `${booPosition}px`;
         gameOver.style.display = "flex";
@@ -46,6 +46,7 @@ export default function geral() {
       }
     }, 10);
     iniciar.style.display = "none";
+    iniciar.classList.add("iniciou");
     kame.classList.add("iniciar-ataque"); //inicia o ataque do kamehameha
     document.addEventListener("keydown", jump);
   }
